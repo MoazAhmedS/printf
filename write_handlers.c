@@ -112,13 +112,13 @@ int write_num(int ind, char buffer[],
 		for (i = 1; i < width - length + 1; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
-		if (flags & F_MINUS && padd == ' ')/* add the addational character */
+		if (flags & F_MINUS && padd == ' ')/* add the addational char*/
 		{
 			if (extra_c)
 				buffer[--ind] = extra_c;
 			return (write(1, &buffer[ind], length) + write(1, &buffer[1], i - 1));
 		}
-		else if (!(flags & F_MINUS) && padd == ' ')/* add the character */
+		else if (!(flags & F_MINUS) && padd == ' ')/* add the char*/
 		{
 			if (extra_c)
 				buffer[--ind] = extra_c;
@@ -182,11 +182,11 @@ int write_unsgnd(int is_negative, int ind,
 
 		buffer[i] = '\0';
 
-		if (flags & F_MINUS) /* add character to the left of the Buffer [buffer>padd]*/
+		if (flags & F_MINUS) /* add charto the left of the Buffer [buffer>padd]*/
 		{
 			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
 		}
-		else /* add character to the left of the padding [padd>buffer]*/
+		else /* add charto the left of the padding [padd>buffer]*/
 		{
 			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 		}
@@ -218,7 +218,7 @@ int write_pointer(char buffer[], int ind, int length,
 		for (i = 3; i < width - length + 3; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
-		if (flags & F_MINUS && padd == ' ')/* add character to the left of the buffer */
+		if (flags & F_MINUS && padd == ' ')/* add charto the left of the buffer */
 		{
 			buffer[--ind] = 'x';
 			buffer[--ind] = '0';
@@ -226,7 +226,7 @@ int write_pointer(char buffer[], int ind, int length,
 				buffer[--ind] = extra_c;
 			return (write(1, &buffer[ind], length) + write(1, &buffer[3], i - 3));
 		}
-		else if (!(flags & F_MINUS) && padd == ' ')/* add character to the left of buffer */
+		else if (!(flags & F_MINUS) && padd == ' ')/* addcharto the left of buffer*/
 		{
 			buffer[--ind] = 'x';
 			buffer[--ind] = '0';
@@ -234,7 +234,7 @@ int write_pointer(char buffer[], int ind, int length,
 				buffer[--ind] = extra_c;
 			return (write(1, &buffer[3], i - 3) + write(1, &buffer[ind], length));
 		}
-		else if (!(flags & F_MINUS) && padd == '0')/* add character to the left of padd */
+		else if (!(flags & F_MINUS) && padd == '0')/* add charto the left of padd */
 		{
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
